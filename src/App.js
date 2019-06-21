@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, themes } from './theme/globalStyle'
 import ThemeSelect from './theme/ThemeSelect'
 import Container from './components/Container'
+import AppRoutes from './configs/routes';
 
 class App extends Component {
   state = {
@@ -15,15 +17,15 @@ class App extends Component {
   }
   render() {
     return (
-      <ThemeProvider theme={this.state.theme}>
-        <React.Fragment>
-        <GlobalStyle />
-        <Container>
-          <h1>Hello World!</h1>
-          <ThemeSelect handleThemeChange={this.handleThemeChange} />
-        </Container>
-        </React.Fragment>
-      </ThemeProvider>
+      <Router>
+        <ThemeProvider theme={this.state.theme}>
+          <Container>
+            <GlobalStyle />
+            <ThemeSelect handleThemeChange={this.handleThemeChange} />
+            <AppRoutes />
+          </Container>
+        </ThemeProvider>
+      </Router>
     )
   }
 }
