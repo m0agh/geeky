@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle, themes } from './theme/globalStyle'
+import ThemeSelect from './theme/ThemeSelect'
+import Container from './components/Container'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    theme: themes.geeky
+  }
+  handleThemeChange = e => {
+    let theme = e.target.value
+    theme === 'theme1' ? (theme = themes.geeky) : (theme = themes.dracula)
+    this.setState({ theme })
+  }
+  render() {
+    return (
+      <ThemeProvider theme={this.state.theme}>
+        <React.Fragment>
+        <GlobalStyle />
+        <Container>
+          <h1>Hello World!</h1>
+          <ThemeSelect handleThemeChange={this.handleThemeChange} />
+        </Container>
+        </React.Fragment>
+      </ThemeProvider>
+    )
+  }
 }
 
-export default App;
+export default App
