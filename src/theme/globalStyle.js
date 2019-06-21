@@ -7,17 +7,19 @@ export const themes = {
     secondary: '#01c1d6',
     danger: '#eb238e',
     light: '#bbbbbb',
-    dark: '#222',
-    bg: '#000084'
+    dark: '#000000',
+    bg: '#000084',
+    link: '#000084'
   },
   dracula: {
     font: 'Dosy',
     primary: '#6e27c5',
     secondary: '#ffb617',
     danger: '#f16623',
-    light: '#fff',
+    light: '#bbbbbb',
     dark: '#222',
-    bg: '#1C2123'
+    bg: '#1C2123',
+    link: '#000084'
   }
 }
 

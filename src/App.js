@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, themes } from './theme/globalStyle'
-import ThemeSelect from './theme/ThemeSelect'
+
 import Container from './components/Container'
+import NavbarHeader from './components/Navbar'
 import AppRoutes from './configs/routes';
 
 class App extends Component {
@@ -21,7 +22,7 @@ class App extends Component {
         <ThemeProvider theme={this.state.theme}>
           <Container>
             <GlobalStyle />
-            <ThemeSelect handleThemeChange={this.handleThemeChange} />
+            <NavbarHeader handleThemeChange={this.handleThemeChange} />
             <AppRoutes />
           </Container>
         </ThemeProvider>
