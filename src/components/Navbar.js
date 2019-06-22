@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from "react-router-dom"
 import styled from 'styled-components'
 
-const Navbar = styled.div`
+const Navbar = styled.nav`
   position: fixed;
   top: 0;
   right: 0;
@@ -20,19 +20,23 @@ const Navbar = styled.div`
 export const Logo = styled.a`
   font-size: 1.2rem;
   letter-spacing: -1px;
-  background-color: ${props => props.theme.light};
-  color: ${props => props.theme.link};
+  background-color: ${props => props.theme.light}!important;
+  color: ${props => props.theme.link}!important;
   margin-right: 10px;
 `
 
 export const NavItem = styled(NavLink)`
   font-size: 1.2rem;
   padding: 0 15px;
-  color: ${props => props.theme.dark};
+  color: ${props => props.theme.dark}!important;
+
+  &:hover{
+    background-color: ${props => props.theme.light}!important; 
+  }
 
   &.active{
-    color: ${props => props.theme.light};
-    background-color: ${props => props.theme.dark}; 
+    color: ${props => props.theme.light}!important;
+    background-color: ${props => props.theme.dark}!important; 
   }
 `
 
@@ -43,6 +47,7 @@ const Select = styled.select`
   background: ${props => props.theme.light};
   border-radius: 2px;
   margin-left: auto;
+  display:none;
 `
 
 export const SelectOpt = styled.option`
@@ -56,7 +61,7 @@ class NavbarHeader extends React.Component {
         <Navbar>
           <Logo href="/">The Geeky</Logo>
           <NavItem exact to="/">Home</NavItem>
-          <NavItem exact to="/about">About</NavItem>
+          <NavItem exact to="/about">About & CV</NavItem>
           <Select onChange={e => this.props.handleThemeChange(e)}>
             <SelectOpt value="theme1">Geeky</SelectOpt>
             <SelectOpt value="theme2">Dracula</SelectOpt>

@@ -5,6 +5,7 @@ import { GlobalStyle, themes } from './theme/globalStyle'
 
 import Container from './components/Container'
 import NavbarHeader from './components/Navbar'
+import MainFooter from './components/Footer'
 import AppRoutes from './configs/routes';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
             <GlobalStyle />
             <NavbarHeader handleThemeChange={this.handleThemeChange} />
             <AppRoutes />
+            <MainFooter />
           </Container>
         </ThemeProvider>
       </Router>

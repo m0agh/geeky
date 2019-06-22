@@ -7,9 +7,13 @@ export const themes = {
     secondary: '#01c1d6',
     danger: '#eb238e',
     light: '#bbbbbb',
+    tooLight: '#ffffff',
     dark: '#000000',
     bg: '#000084',
-    link: '#000084'
+    link: '#000084',
+    anchor: '#fefe54',
+    anchorBg: '#aa5500',
+    gray: '#555555',
   },
   dracula: {
     font: 'Dosy',
@@ -17,9 +21,13 @@ export const themes = {
     secondary: '#ffb617',
     danger: '#f16623',
     light: '#bbbbbb',
+    tooLight: '#ffffff',
     dark: '#222',
     bg: '#1C2123',
-    link: '#000084'
+    link: '#000084',
+    anchor: '#fefe54',
+    anchorBg: '#aa5500',
+    gray: '#555555',
   }
 }
 
