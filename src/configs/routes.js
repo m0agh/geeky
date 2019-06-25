@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Route } from "react-router-dom"
-import Home from '../views/Home'
-import About from '../views/About'
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import Home from '../views/Home';
+import About from '../views/About';
 
 class AppRoutes extends Component {
   render() {
@@ -10,7 +10,7 @@ class AppRoutes extends Component {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
       </React.Fragment>
-    )
+    );
   }
 }
 

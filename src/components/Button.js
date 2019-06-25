@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Btn = styled.button`
   padding: 10px 10px;
@@ -13,9 +13,9 @@ export const Btn = styled.button`
   cursor: pointer;
   margin: 10px 0;
 
-  &:hover{
+  &:hover {
     color: ${props => props.theme.tooLight};
     background: ${props => props.theme.gray};
     outline: 0;
   }
-`
+`;

@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components';
 
 export const themes = {
   geeky: {
@@ -13,7 +13,7 @@ export const themes = {
     link: '#000084',
     anchor: '#fefe54',
     anchorBg: '#aa5500',
-    gray: '#555555',
+    gray: '#555555'
   },
   dracula: {
     font: 'Dosy',
@@ -27,9 +27,9 @@ export const themes = {
     link: '#000084',
     anchor: '#fefe54',
     anchorBg: '#aa5500',
-    gray: '#555555',
+    gray: '#555555'
   }
-}
+};
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -55,27 +55,24 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
-`
+`;
 
 const sizes = {
   giant: 1500,
   desktop: 992,
   tablet: 768,
   phone: 376
-}
+};
 
 // iterate through the sizes and create a media template
-export const media = Object.keys(sizes).reduce(
-  (accumulator, label) => {
-    // use em in breakpoints to work properly cross-browser and support users
-    // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
-    const emSize = sizes[label] / 16
-    accumulator[label] = (...args) => css`
-      @media (max-width: ${emSize}em) {
-        ${css(...args)};
-      }
-    `
-    return accumulator
-  },
-  {}
-)
+export const media = Object.keys(sizes).reduce((accumulator, label) => {
+  // use em in breakpoints to work properly cross-browser and support users
+  // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
+  const emSize = sizes[label] / 16;
+  accumulator[label] = (...args) => css`
+    @media (max-width: ${emSize}em) {
+      ${css(...args)};
+    }
+  `;
+  return accumulator;
+}, {});

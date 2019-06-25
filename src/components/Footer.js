@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const Footer = styled.footer`
   margin-top: 30px;
@@ -11,18 +11,20 @@ const Footer = styled.footer`
   p{
     margin: 0;
   }
-`
+`;
 
 class MainFooter extends React.Component {
   render() {
     return (
       <React.Fragment>
         <Footer>
-          <p>Made with <a href="/">❤︎</a> by Me ;)</p>
+          <p>
+            Made with <a href="/">❤︎</a> by Me ;)
+          </p>
         </Footer>
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default MainFooter
+export default MainFooter;
